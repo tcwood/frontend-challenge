@@ -26,7 +26,6 @@ TopSalesList.propTypes = {
     shape({
       name: string.isRequired,
       revenue: number.isRequired,
-      orderCount: number.isRequired,
     }),
   ).isRequired,
 };

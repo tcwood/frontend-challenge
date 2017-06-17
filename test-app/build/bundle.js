@@ -96779,8 +96779,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       TopSalesList.propTypes = {
         topTen: arrayOf(shape({
           name: string.isRequired,
-          revenue: number.isRequired,
-          orderCount: number.isRequired
+          revenue: number.isRequired
         })).isRequired
       };
 
@@ -99817,8 +99816,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /******/__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property);};/******//******/// __webpack_public_path__
 /******/__webpack_require__.p="";/******//******/// Load entry module and return exports
 /******/return __webpack_require__(__webpack_require__.s=0);/******/}(/************************************************************************//******/[/* 0 *//***/function(module,exports,__webpack_require__){"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports.default=transformData;var _lodash=__webpack_require__(1);function transformData(purchaseOrders){var productList={};// Aggregate duplicate product information into productList object
-(0,_lodash.forEach)(purchaseOrders,function(purchaseOrder){(0,_lodash.forEach)(purchaseOrder.products,function(_ref){var name=_ref.name,order_count=_ref.order_count,vendor_price=_ref.vendor_price;var revenue=order_count*(vendor_price.value/Math.pow(10,vendor_price.scale));if(productList[name]){productList[name].orderCount+=order_count;productList[name].revenue+=revenue;}else{var titleCaseName=(0,_lodash.startCase)(name.toLowerCase());productList[name]={name:titleCaseName,orderCount:order_count,revenue:revenue};}});});// Change object into an array and sort array by order count
-var sortedProducts=(0,_lodash.values)(productList).sort(function(a,b){return b.order_count-a.order_count;});return sortedProducts.slice(0,10);}/***/},/* 1 *//***/function(module,exports,__webpack_require__){/* WEBPACK VAR INJECTION */(function(global,module){var __WEBPACK_AMD_DEFINE_RESULT__;/**
+(0,_lodash.forEach)(purchaseOrders,function(_ref){var products=_ref.products;(0,_lodash.forEach)(products,function(_ref2){var name=_ref2.name,order_count=_ref2.order_count,vendor_price=_ref2.vendor_price;var revenue=order_count*(vendor_price.value/Math.pow(10,vendor_price.scale));// if have seen product previously, add to it's running orderCount and revenue
+if(productList[name]){productList[name].revenue+=revenue;// if first instance of a product, initialize it's name, orderCount, and revenue
+}else{var titleCaseName=(0,_lodash.startCase)(name.toLowerCase());productList[name]={name:titleCaseName,revenue:revenue};}});});// Change object into an array and sort array by order count
+var sortedProducts=(0,_lodash.values)(productList).sort(function(a,b){return b.revenue-a.revenue;});return sortedProducts.slice(0,10);}/***/},/* 1 *//***/function(module,exports,__webpack_require__){/* WEBPACK VAR INJECTION */(function(global,module){var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>
  * Copyright JS Foundation and other contributors <https://js.foundation/>
