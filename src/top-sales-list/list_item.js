@@ -7,7 +7,7 @@ const ListItem = ({ name, revenue, i }) => (
     <div className={Styles.indNumber}>{i + 1}</div>
     <div className={Styles.content}>
       <p className={Styles.medText}>{name}</p>
-      <p className={Styles.smallText}>${revenue}</p>
+      <p className={Styles.smallText}>${revenue.toFixed(2)}</p>
     </div>
   </div>
 );
