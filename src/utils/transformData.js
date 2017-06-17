@@ -1,4 +1,4 @@
-import { forEach, values } from 'lodash';
+import { forEach, startCase, values } from 'lodash';
 
 export default function transformData(purchaseOrders) {
   let productList = {};
@@ -10,8 +10,9 @@ export default function transformData(purchaseOrders) {
         productList[name].orderCount += order_count;
         productList[name].revenue += revenue;
       } else {
+        const titleCaseName = startCase(name.toLowerCase());
         productList[name] = {
-          name,
+          name: titleCaseName,
           orderCount: order_count,
           revenue,
         };
