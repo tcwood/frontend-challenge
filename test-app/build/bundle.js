@@ -45741,7 +45741,7 @@ function DoublyLinkedNode(key, val) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {
+
 
 var _react = __webpack_require__(230);
 
@@ -45751,6 +45751,10 @@ var _reactDom = __webpack_require__(229);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _request = __webpack_require__(231);
+
+var _request2 = _interopRequireDefault(_request);
+
 var _index = __webpack_require__(532);
 
 var _index2 = _interopRequireDefault(_index);
@@ -45759,19 +45763,13 @@ var _transformData = __webpack_require__(533);
 
 var _transformData2 = _interopRequireDefault(_transformData);
 
-var _request = __webpack_require__(231);
-
-var _request2 = _interopRequireDefault(_request);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _request2.default.get('http://localhost:3000/PurchaseOrders', function (error, response, body) {
   // console.log('body:', body);
   var topTen = (0, _transformData2.default)(JSON.parse(body));
-  console.log('topTen', topTen);
-  _reactDom2.default.render(_react2.default.createElement(_index2.default, null), document.getElementById('app'));
+  _reactDom2.default.render(_react2.default.createElement(_index2.default, { topTen: topTen }), document.getElementById('app'));
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 278 */
@@ -96739,19 +96737,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         value: true
       });
 
-      var _createClass = function () {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }return function (Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-        };
-      }();
-
       var _react = __webpack_require__(39);
 
       var _react2 = _interopRequireDefault(_react);
+
+      var _list_item = __webpack_require__(42);
+
+      var _list_item2 = _interopRequireDefault(_list_item);
 
       var _top_sales = __webpack_require__(41);
 
@@ -96761,50 +96753,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return obj && obj.__esModule ? obj : { default: obj };
       }
 
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-
-      function _possibleConstructorReturn(self, call) {
-        if (!self) {
-          throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        }return call && ((typeof call === 'undefined' ? 'undefined' : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-      }
-
-      function _inherits(subClass, superClass) {
-        if (typeof superClass !== "function" && superClass !== null) {
-          throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof(superClass)));
-        }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-      }
-
-      var ListItem = function ListItem() {
-        return _react2.default.createElement('div', { className: _top_sales2.default.listItem }, _react2.default.createElement('div', { className: _top_sales2.default.indNumber }, '1'), _react2.default.createElement('div', { className: _top_sales2.default.content }, _react2.default.createElement('p', { className: _top_sales2.default.medText }, 'Doublelicious'), _react2.default.createElement('p', { className: _top_sales2.default.smallText }, '$1360.93')));
+      var TopSalesList = function TopSalesList(_ref) {
+        var topTen = _ref.topTen;
+        return _react2.default.createElement('div', { className: _top_sales2.default.salesList }, _react2.default.createElement('div', { className: _top_sales2.default.title }, 'Top Sales Items'), topTen.map(function (_ref2, i) {
+          var name = _ref2.name,
+              revenue = _ref2.revenue;
+          return _react2.default.createElement(_list_item2.default, {
+            key: name,
+            name: name,
+            revenue: revenue,
+            i: i
+          });
+        }));
       };
-
-      // export default TopSalesList;
-      // write top sales list component here
-
-
-      var TopSalesList = function (_React$Component) {
-        _inherits(TopSalesList, _React$Component);
-
-        function TopSalesList() {
-          _classCallCheck(this, TopSalesList);
-
-          return _possibleConstructorReturn(this, (TopSalesList.__proto__ || Object.getPrototypeOf(TopSalesList)).apply(this, arguments));
-        }
-
-        _createClass(TopSalesList, [{
-          key: 'render',
-          value: function render() {
-            return _react2.default.createElement('div', { className: _top_sales2.default.salesList }, _react2.default.createElement('div', { className: _top_sales2.default.title }, 'Top Sales Items'), _react2.default.createElement(ListItem, null), _react2.default.createElement(ListItem, null), _react2.default.createElement(ListItem, null));
-          }
-        }]);
-
-        return TopSalesList;
-      }(_react2.default.Component);
 
       exports.default = TopSalesList;
 
@@ -97582,7 +97543,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
       // module
-      exports.push([module.i, "html, body, p {\n  margin: 0;\n  padding: 0;\n  font: 100% robotico, sans-serif;\n  font-weight: 300;\n  color: #000000; }\n\n.echo-component-top_sales-1hwp8 {\n  width: 300px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  border: 1px solid #CCCCCC;\n  padding: 10px; }\n\n.echo-component-top_sales-3P5ED {\n  height: 44px;\n  width: 300px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center; }\n\n.echo-component-top_sales-ojTf7 {\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #9BCA3C;\n  color: white;\n  font-size: 24;\n  margin: 0 20px 0 10px; }\n\n.echo-component-top_sales-1Ohju {\n  display: flex;\n  flex: 1;\n  height: 44px;\n  flex-direction: column;\n  justify-content: center;\n  border-top: 1px solid #CCCCCC; }\n\n.echo-component-top_sales-EZXOe {\n  font-size: 16px;\n  margin-bottom: 30; }\n\n.echo-component-top_sales-1w2KU {\n  font-size: 14px;\n  margin-bottom: 4px; }\n\n.echo-component-top_sales-1NIau {\n  font-size: 10px; }\n", ""]);
+      exports.push([module.i, "html, body, p {\n  margin: 0;\n  padding: 0;\n  font: 100% robotico, sans-serif;\n  font-weight: 300;\n  color: #000000; }\n\n.echo-component-top_sales-1hwp8 {\n  width: 600px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  border: 1px solid #CCCCCC;\n  padding: 10px; }\n\n.echo-component-top_sales-3P5ED {\n  height: 44px;\n  width: 600px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center; }\n\n.echo-component-top_sales-ojTf7 {\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #9BCA3C;\n  color: white;\n  font-size: 24;\n  margin: 0 20px 0 10px; }\n\n.echo-component-top_sales-1Ohju {\n  display: flex;\n  flex: 1;\n  height: 44px;\n  flex-direction: column;\n  justify-content: center;\n  border-top: 1px solid #CCCCCC; }\n\n.echo-component-top_sales-EZXOe {\n  font-size: 16px;\n  margin-bottom: 30; }\n\n.echo-component-top_sales-1w2KU {\n  font-size: 14px;\n  margin-bottom: 4px; }\n\n.echo-component-top_sales-1NIau {\n  font-size: 10px; }\n", ""]);
 
       // exports
       exports.locals = {
@@ -99668,6 +99629,38 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           update();
         });
       }
+
+      /***/
+    },
+    /* 42 */
+    /***/function (module, exports, __webpack_require__) {
+
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+
+      var _react = __webpack_require__(39);
+
+      var _react2 = _interopRequireDefault(_react);
+
+      var _top_sales = __webpack_require__(41);
+
+      var _top_sales2 = _interopRequireDefault(_top_sales);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      var ListItem = function ListItem(_ref) {
+        var name = _ref.name,
+            revenue = _ref.revenue,
+            i = _ref.i;
+        return _react2.default.createElement('div', { className: _top_sales2.default.listItem }, _react2.default.createElement('div', { className: _top_sales2.default.indNumber }, i + 1), _react2.default.createElement('div', { className: _top_sales2.default.content }, _react2.default.createElement('p', { className: _top_sales2.default.medText }, name), _react2.default.createElement('p', { className: _top_sales2.default.smallText }, '$', revenue)));
+      };
+
+      exports.default = ListItem;
 
       /***/
     }])
