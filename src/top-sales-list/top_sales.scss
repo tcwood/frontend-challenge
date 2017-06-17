@@ -1,1 +1,64 @@
 //write styles here
+html, body, p {
+    margin: 0;
+    padding: 0;
+    font: 100% robotico, sans-serif;
+    font-weight: 300;
+    color: #000000;
+}
+
+.salesList {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+}
+
+.listItem {
+  height: 44px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.indNumber {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9BCA3C;
+  color: white;
+  font-size: 24;
+  margin: 0 20px 0 10px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  height: 44px;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 30;
+}
+
+.medText {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.smallText {
+  font-size: 10px;
+}

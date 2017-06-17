@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TopSalesList from "../../dist/TopSalesList/index.js";
-import transformData from "../../dist/Utils/transformData.js";
+import TopSalesList from '../../dist/TopSalesList/index';
+import transformData from '../../dist/Utils/transformData';
 import request from 'request';
 
 request.get('http://localhost:3000/PurchaseOrders', function (error, response, body) {
