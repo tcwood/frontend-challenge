@@ -96779,8 +96779,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
       }
 
+      var ListItem = function ListItem() {
+        return _react2.default.createElement('div', { className: _top_sales2.default.listItem }, _react2.default.createElement('div', { className: _top_sales2.default.indNumber }, '1'), _react2.default.createElement('div', { className: _top_sales2.default.content }, _react2.default.createElement('p', { className: _top_sales2.default.medText }, 'Doublelicious'), _react2.default.createElement('p', { className: _top_sales2.default.smallText }, '$1360.93')));
+      };
+
       // export default TopSalesList;
       // write top sales list component here
+
+
       var TopSalesList = function (_React$Component) {
         _inherits(TopSalesList, _React$Component);
 
@@ -96793,7 +96799,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         _createClass(TopSalesList, [{
           key: 'render',
           value: function render() {
-            return _react2.default.createElement('div', { className: _top_sales2.default.salesList }, _react2.default.createElement('div', { className: _top_sales2.default.title }, 'Top Sales Items'), _react2.default.createElement('div', { className: _top_sales2.default.listItem }, _react2.default.createElement('div', { className: _top_sales2.default.indNumber }, '1'), _react2.default.createElement('div', { className: _top_sales2.default.content }, _react2.default.createElement('p', { className: _top_sales2.default.medText }, 'Doublelicious'), _react2.default.createElement('p', { className: _top_sales2.default.smallText }, '$1360.93'))));
+            return _react2.default.createElement('div', { className: _top_sales2.default.salesList }, _react2.default.createElement('div', { className: _top_sales2.default.title }, 'Top Sales Items'), _react2.default.createElement(ListItem, null), _react2.default.createElement(ListItem, null), _react2.default.createElement(ListItem, null));
           }
         }]);
 
@@ -97576,7 +97582,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
       // module
-      exports.push([module.i, "html, body, p {\n  margin: 0;\n  padding: 0;\n  font: 100% robotico, sans-serif;\n  font-weight: 300;\n  color: #000000; }\n\n.echo-component-top_sales-1hwp8 {\n  width: 300px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  border: 1px solid #CCCCCC;\n  padding: 10px; }\n\n.echo-component-top_sales-3P5ED {\n  height: 44px;\n  width: 300px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center; }\n\n.echo-component-top_sales-ojTf7 {\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #9BCA3C;\n  color: white;\n  font-size: 24;\n  margin: 0 20px 0 10px; }\n\n.echo-component-top_sales-1Ohju {\n  display: flex;\n  flex: 1;\n  height: 44px;\n  flex-direction: column;\n  justify-content: center;\n  border-top: 1px solid #CCCCCC;\n  border-bottom: 1px solid #CCCCCC; }\n\n.echo-component-top_sales-EZXOe {\n  font-size: 16px;\n  margin-bottom: 30; }\n\n.echo-component-top_sales-1w2KU {\n  font-size: 14px;\n  margin-bottom: 4px; }\n\n.echo-component-top_sales-1NIau {\n  font-size: 10px; }\n", ""]);
+      exports.push([module.i, "html, body, p {\n  margin: 0;\n  padding: 0;\n  font: 100% robotico, sans-serif;\n  font-weight: 300;\n  color: #000000; }\n\n.echo-component-top_sales-1hwp8 {\n  width: 300px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  border: 1px solid #CCCCCC;\n  padding: 10px; }\n\n.echo-component-top_sales-3P5ED {\n  height: 44px;\n  width: 300px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center; }\n\n.echo-component-top_sales-ojTf7 {\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #9BCA3C;\n  color: white;\n  font-size: 24;\n  margin: 0 20px 0 10px; }\n\n.echo-component-top_sales-1Ohju {\n  display: flex;\n  flex: 1;\n  height: 44px;\n  flex-direction: column;\n  justify-content: center;\n  border-top: 1px solid #CCCCCC; }\n\n.echo-component-top_sales-EZXOe {\n  font-size: 16px;\n  margin-bottom: 30; }\n\n.echo-component-top_sales-1w2KU {\n  font-size: 14px;\n  margin-bottom: 4px; }\n\n.echo-component-top_sales-1NIau {\n  font-size: 10px; }\n", ""]);
 
       // exports
       exports.locals = {
