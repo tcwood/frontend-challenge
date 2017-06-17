@@ -7,12 +7,12 @@ export default function transformData(purchaseOrders) {
     forEach(purchaseOrder.products, ({ name, order_count, vendor_price }) => {
       const revenue = order_count * (vendor_price.value / (10 ** vendor_price.scale));
       if (productList[name]) {
-        productList[name].order_count += order_count;
+        productList[name].orderCount += order_count;
         productList[name].revenue += revenue;
       } else {
         productList[name] = {
           name,
-          order_count,
+          orderCount: order_count,
           revenue,
         };
       }

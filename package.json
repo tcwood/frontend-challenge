@@ -13,6 +13,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "ngreact": "^0.3.0",
+    "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.79.0"

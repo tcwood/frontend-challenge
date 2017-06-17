@@ -96741,6 +96741,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
       var _react2 = _interopRequireDefault(_react);
 
+      var _propTypes = __webpack_require__(44);
+
+      var _propTypes2 = _interopRequireDefault(_propTypes);
+
       var _list_item = __webpack_require__(42);
 
       var _list_item2 = _interopRequireDefault(_list_item);
@@ -96765,6 +96769,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             i: i
           });
         }));
+      };
+
+      var arrayOf = _propTypes2.default.arrayOf,
+          number = _propTypes2.default.number,
+          string = _propTypes2.default.string,
+          shape = _propTypes2.default.shape;
+
+      TopSalesList.propTypes = {
+        topTen: arrayOf(shape({
+          name: string.isRequired,
+          revenue: number.isRequired,
+          orderCount: number.isRequired
+        })).isRequired
       };
 
       exports.default = TopSalesList;
@@ -97129,11 +97146,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 Constructor.getDefaultProps = _getDefaultProps;
               }
             },
-            propTypes: function propTypes(Constructor, _propTypes) {
+            propTypes: function propTypes(Constructor, _propTypes3) {
               if (process.env.NODE_ENV !== 'production') {
-                validateTypeDef(Constructor, _propTypes, 'prop');
+                validateTypeDef(Constructor, _propTypes3, 'prop');
               }
-              Constructor.propTypes = _assign({}, Constructor.propTypes, _propTypes);
+              Constructor.propTypes = _assign({}, Constructor.propTypes, _propTypes3);
             },
             statics: function statics(Constructor, _statics) {
               mixStaticSpecIntoComponent(Constructor, _statics);
@@ -99645,6 +99662,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
       var _react2 = _interopRequireDefault(_react);
 
+      var _propTypes = __webpack_require__(44);
+
+      var _propTypes2 = _interopRequireDefault(_propTypes);
+
       var _top_sales = __webpack_require__(41);
 
       var _top_sales2 = _interopRequireDefault(_top_sales);
@@ -99660,7 +99681,110 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return _react2.default.createElement('div', { className: _top_sales2.default.listItem }, _react2.default.createElement('div', { className: _top_sales2.default.indNumber }, i + 1), _react2.default.createElement('div', { className: _top_sales2.default.content }, _react2.default.createElement('p', { className: _top_sales2.default.medText }, name), _react2.default.createElement('p', { className: _top_sales2.default.smallText }, '$', revenue)));
       };
 
+      var number = _propTypes2.default.number,
+          string = _propTypes2.default.string;
+
+      ListItem.propTypes = {
+        name: string.isRequired,
+        revenue: number.isRequired,
+        i: number.isRequired
+      };
+
       exports.default = ListItem;
+
+      /***/
+    },
+    /* 43 */
+    /***/function (module, exports, __webpack_require__) {
+
+      "use strict";
+      /**
+       * Copyright 2013-present, Facebook, Inc.
+       * All rights reserved.
+       *
+       * This source code is licensed under the BSD-style license found in the
+       * LICENSE file in the root directory of this source tree. An additional grant
+       * of patent rights can be found in the PATENTS file in the same directory.
+       */
+
+      var emptyFunction = __webpack_require__(8);
+      var invariant = __webpack_require__(1);
+      var ReactPropTypesSecret = __webpack_require__(12);
+
+      module.exports = function () {
+        function shim(props, propName, componentName, location, propFullName, secret) {
+          if (secret === ReactPropTypesSecret) {
+            // It is still safe when called from React.
+            return;
+          }
+          invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+        };
+        shim.isRequired = shim;
+        function getShim() {
+          return shim;
+        };
+        // Important!
+        // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+        var ReactPropTypes = {
+          array: shim,
+          bool: shim,
+          func: shim,
+          number: shim,
+          object: shim,
+          string: shim,
+          symbol: shim,
+
+          any: shim,
+          arrayOf: getShim,
+          element: shim,
+          instanceOf: getShim,
+          node: shim,
+          objectOf: getShim,
+          oneOf: getShim,
+          oneOfType: getShim,
+          shape: getShim
+        };
+
+        ReactPropTypes.checkPropTypes = emptyFunction;
+        ReactPropTypes.PropTypes = ReactPropTypes;
+
+        return ReactPropTypes;
+      };
+
+      /***/
+    },
+    /* 44 */
+    /***/function (module, exports, __webpack_require__) {
+
+      /* WEBPACK VAR INJECTION */(function (process) {
+        /**
+        * Copyright 2013-present, Facebook, Inc.
+        * All rights reserved.
+        *
+        * This source code is licensed under the BSD-style license found in the
+        * LICENSE file in the root directory of this source tree. An additional grant
+        * of patent rights can be found in the PATENTS file in the same directory.
+        */
+
+        if (process.env.NODE_ENV !== 'production') {
+          var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element') || 0xeac7;
+
+          var isValidElement = function isValidElement(object) {
+            return (typeof object === 'undefined' ? 'undefined' : _typeof(object)) === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+          };
+
+          // By explicitly using `prop-types` you are opting into new development behavior.
+          // http://fb.me/prop-types-in-prod
+          var throwOnDirectAccess = true;
+          module.exports = __webpack_require__(25)(isValidElement, throwOnDirectAccess);
+        } else {
+          // By explicitly using `prop-types` you are opting into new production behavior.
+          // http://fb.me/prop-types-in-prod
+          module.exports = __webpack_require__(43)();
+        }
+
+        /* WEBPACK VAR INJECTION */
+      }).call(exports, __webpack_require__(0));
 
       /***/
     }])
@@ -99693,7 +99817,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /******/__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property);};/******//******/// __webpack_public_path__
 /******/__webpack_require__.p="";/******//******/// Load entry module and return exports
 /******/return __webpack_require__(__webpack_require__.s=0);/******/}(/************************************************************************//******/[/* 0 *//***/function(module,exports,__webpack_require__){"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports.default=transformData;var _lodash=__webpack_require__(1);function transformData(purchaseOrders){var productList={};// Aggregate duplicate product information into productList object
-(0,_lodash.forEach)(purchaseOrders,function(purchaseOrder){(0,_lodash.forEach)(purchaseOrder.products,function(_ref){var name=_ref.name,order_count=_ref.order_count,vendor_price=_ref.vendor_price;var revenue=order_count*(vendor_price.value/Math.pow(10,vendor_price.scale));if(productList[name]){productList[name].order_count+=order_count;productList[name].revenue+=revenue;}else{productList[name]={name:name,order_count:order_count,revenue:revenue};}});});// Change object into an array and sort array by order count
+(0,_lodash.forEach)(purchaseOrders,function(purchaseOrder){(0,_lodash.forEach)(purchaseOrder.products,function(_ref){var name=_ref.name,order_count=_ref.order_count,vendor_price=_ref.vendor_price;var revenue=order_count*(vendor_price.value/Math.pow(10,vendor_price.scale));if(productList[name]){productList[name].orderCount+=order_count;productList[name].revenue+=revenue;}else{productList[name]={name:name,orderCount:order_count,revenue:revenue};}});});// Change object into an array and sort array by order count
 var sortedProducts=(0,_lodash.values)(productList).sort(function(a,b){return b.order_count-a.order_count;});return sortedProducts.slice(0,10);}/***/},/* 1 *//***/function(module,exports,__webpack_require__){/* WEBPACK VAR INJECTION */(function(global,module){var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>

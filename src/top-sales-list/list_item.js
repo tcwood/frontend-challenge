@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import Styles from './top_sales.scss';
 
 const ListItem = ({ name, revenue, i }) => (
@@ -10,5 +11,13 @@ const ListItem = ({ name, revenue, i }) => (
     </div>
   </div>
 );
+
+const { number, string } = propTypes;
+
+ListItem.propTypes = {
+  name: string.isRequired,
+  revenue: number.isRequired,
+  i: number.isRequired,
+};
 
 export default ListItem;
