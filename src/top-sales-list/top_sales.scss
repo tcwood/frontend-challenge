@@ -1,4 +1,4 @@
-$list-width: 600px;
+$list-width: 500px;
 $item-height: 44px;
 $border-color: #CCCCCC;
 $text-color: #000000;
@@ -13,6 +13,7 @@ html, body, p {
 
 .salesList {
   width: $list-width;
+  margin: 5%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
