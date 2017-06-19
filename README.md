@@ -1,8 +1,8 @@
 # HotSchedules Front-end Engineering Challenge
 
-## How to use the component with jQuery and Angular
+# How to use the component with jQuery and Angular
 
-# Usage with jQuery
+## Usage with jQuery
 To use this component with jQuery, you will need to create a <div> in the desired spot that has the id 'top-sales'. For example:
 
 ```javascript
@@ -10,7 +10,7 @@ var topSalesContainer = $('<div id="top-sales"></div>');
 containerToPlaceComponentIn.append(topSalesContainer);
 ```
 
-Then you will also create a file similar to the src/test-app/src/app.js file. Make sure you have react and react-dom installed.
+Then create the react component like below. The important line is the ReactDOM.render() line. You can use a different manner to pass in data if you wish, as long as it is passed into the topTen={} prop. Make sure you have react and react-dom installed.
 
 ```javascript
 import React from 'react';
@@ -35,7 +35,7 @@ Also make sure the bundled script is in your html file, such as:
 [For more help, follow instructions here](https://facebook.github.io/react/docs/integrating-with-other-libraries.html)
 
 
-# Usage with Angular
+## Usage with Angular
 We can use [react2angular](https://github.com/coatue-oss/react2angular) to use our React component within an Angular app.
 
 Make sure react2angular is installed and then expose the component to Angular.
@@ -49,7 +49,7 @@ angular
   .component('topSalesList', react2Angular(TopSalesList))
 ```
 
-Then use the component and passing data into the topTen prop.
+Then use the component and pass data into the topTen prop. The utility function in the transformData file might be helpful to format the data properly.
 
 ```javascript
 <top-sales-list
