@@ -96758,7 +96758,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
       var TopSalesList = function TopSalesList(_ref) {
         var topTen = _ref.topTen;
-        return _react2.default.createElement('div', { className: _top_sales2.default.salesList }, _react2.default.createElement('div', { className: _top_sales2.default.title }, 'Top Sales Items'), topTen.map(function (_ref2, i) {
+        return _react2.default.createElement('div', { className: _top_sales2.default.salesList }, _react2.default.createElement('h1', { className: _top_sales2.default.title }, 'Top Sales Items'), topTen.map(function (_ref2, i) {
           var name = _ref2.name,
               revenue = _ref2.revenue;
           return _react2.default.createElement(_list_item2.default, {
@@ -97558,7 +97558,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
       // module
-      exports.push([module.i, "html, body, p {\n  margin: 0;\n  padding: 0;\n  font: 100% Roboto, sans-serif;\n  font-weight: 300;\n  color: #000000; }\n\n.echo-component-top_sales-1hwp8 {\n  width: 500px;\n  margin: 5%;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  border: 1px solid #CCCCCC;\n  padding: 10px; }\n\n.echo-component-top_sales-3P5ED {\n  height: 44px;\n  width: 500px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center; }\n\n.echo-component-top_sales-ojTf7 {\n  height: 40px;\n  width: 40px;\n  margin: 0 20px 0 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  border-radius: 20px;\n  background-color: #9BCA3C;\n  color: white;\n  font-size: 24; }\n\n.echo-component-top_sales-1Ohju {\n  height: 44px;\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n  justify-content: center;\n  border-top: 1px solid #CCCCCC; }\n\n.echo-component-top_sales-EZXOe {\n  font-size: 16px;\n  margin-bottom: 30; }\n\n.echo-component-top_sales-1w2KU {\n  font-size: 14px;\n  margin-bottom: 4px; }\n\n.echo-component-top_sales-1NIau {\n  font-size: 10px; }\n", ""]);
+      exports.push([module.i, "html, body, h1, p {\n  margin: 0;\n  padding: 0;\n  font: 100% Roboto, sans-serif;\n  font-weight: 300;\n  color: #000000; }\n\n.echo-component-top_sales-1hwp8 {\n  width: 500px;\n  margin: 5%;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  border: 1px solid #CCCCCC;\n  padding: 10px; }\n\n.echo-component-top_sales-3P5ED {\n  height: 44px;\n  width: 500px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center; }\n\n.echo-component-top_sales-ojTf7 {\n  height: 40px;\n  width: 40px;\n  margin: 0 20px 0 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  border-radius: 20px;\n  background-color: #9BCA3C;\n  color: white;\n  font-size: 24; }\n\n.echo-component-top_sales-1Ohju {\n  height: 44px;\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n  justify-content: center;\n  border-top: 1px solid #CCCCCC; }\n\n.echo-component-top_sales-EZXOe {\n  font-size: 16px;\n  margin-bottom: 30; }\n\n.echo-component-top_sales-1w2KU {\n  font-size: 14px;\n  margin-bottom: 4px; }\n\n.echo-component-top_sales-1NIau {\n  font-size: 10px; }\n", ""]);
 
       // exports
       exports.locals = {

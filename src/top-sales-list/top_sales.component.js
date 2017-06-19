@@ -5,7 +5,7 @@ import Styles from './top_sales.scss';
 
 const TopSalesList = ({ topTen }) => (
   <div className={Styles.salesList}>
-    <div className={Styles.title}>Top Sales Items</div>
+    <h1 className={Styles.title}>Top Sales Items</h1>
     {
       topTen.map(({ name, revenue }, i) => (
         <ListItem
