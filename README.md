@@ -1,5 +1,64 @@
 # HotSchedules Front-end Engineering Challenge
 
+## How to use the component with jQuery and Angular
+
+# Usage with jQuery
+To use this component with jQuery, you will need to create a <div> in the desired spot that has the id 'top-sales'. For example:
+
+```javascript
+var topSalesContainer = $('<div id="top-sales"></div>');
+containerToPlaceComponentIn.append(topSalesContainer);
+```
+
+Then you will also create a file similar to the src/test-app/src/app.js file. Make sure you have react and react-dom installed.
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import request from 'request';
+import TopSalesList from '../../dist/TopSalesList/index';
+import transformData from '../../dist/Utils/transformData';
+
+request.get('http://localhost:3000/PurchaseOrders', function (error, response, body) {
+  const topTen = transformData(JSON.parse(body));
+  ReactDOM.render(<TopSalesList topTen={topTen} />, document.getElementById('top-sales'));
+});
+```
+where the ReactDOM.render() method targets the top-sales id.
+
+Also make sure the bundled script is in your html file, such as:
+
+```html
+<script src="./build/bundle.js"></script>
+```
+
+[For more help, follow instructions here](https://facebook.github.io/react/docs/integrating-with-other-libraries.html)
+
+
+# Usage with Angular
+We can use [react2angular](https://github.com/coatue-oss/react2angular) to use our React component within an Angular app.
+
+Make sure react2angular is installed and then expose the component to Angular.
+
+```javascript
+import { react2angular } from 'react2angular'
+import TopSalesList from './your/path/to/dist/TopSalesList/index'
+
+angular
+  .module('myModule', [])
+  .component('topSalesList', react2Angular(TopSalesList))
+```
+
+Then use the component and passing data into the topTen prop.
+
+```javascript
+<top-sales-list
+  topTen={data}
+></top-sales-list>
+```
+
+[For more help, follow instructions here](https://github.com/coatue-oss/react2angular)
+
 ## Narrative 
 
 After realizing the user experience of their application suite is disjointed, shadowy upper-management figures

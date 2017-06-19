@@ -45766,9 +45766,8 @@ var _transformData2 = _interopRequireDefault(_transformData);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _request2.default.get('http://localhost:3000/PurchaseOrders', function (error, response, body) {
-  // console.log('body:', body);
   var topTen = (0, _transformData2.default)(JSON.parse(body));
-  _reactDom2.default.render(_react2.default.createElement(_index2.default, { topTen: topTen }), document.getElementById('app'));
+  _reactDom2.default.render(_react2.default.createElement(_index2.default, { topTen: topTen }), document.getElementById('top-sales'));
 });
 
 /***/ }),
