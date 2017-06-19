@@ -10,7 +10,7 @@ var topSalesContainer = $('<div id="top-sales"></div>');
 containerToPlaceComponentIn.append(topSalesContainer);
 ```
 
-Then create the react component like below. The important line is the ReactDOM.render() line. You can use a different manner to pass in data if you wish, as long as it is passed into the topTen={} prop. Make sure you have react and react-dom installed.
+Then create the react component like below. The important line is the ReactDOM.render() line, which targets the div with the top-sales id. You can use a different manner to pass in data if you wish, as long as it is passed into the topTen={} prop. Make sure you have react and react-dom installed.
 
 ```javascript
 import React from 'react';
@@ -24,7 +24,6 @@ request.get('http://localhost:3000/PurchaseOrders', function (error, response, b
   ReactDOM.render(<TopSalesList topTen={topTen} />, document.getElementById('top-sales'));
 });
 ```
-where the ReactDOM.render() method targets the top-sales id.
 
 Also make sure the bundled script is in your html file, such as:
 
