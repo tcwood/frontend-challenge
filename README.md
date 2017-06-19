@@ -1,5 +1,7 @@
 # HotSchedules Front-end Engineering Challenge
 
+![Component Image](./teaser.png)
+
 # How to use the component with jQuery and Angular
 
 ## Usage with jQuery
